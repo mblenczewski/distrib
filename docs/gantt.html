@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['gantt']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      const dateRangeRoot = new Date(2022, 9, 24);
+
+      const days = (days) => {
+        return days * 24 * 60 * 60 * 1000;
+      };
+
+      const weeks = (week) => {
+        let start = new Date(2022, 9, 24);
+
+        start.setDate(start.getDate() + (week * 7));
+
+        return start;
+      };
+
+      const date = (week, day) => {
+        let start = weeks(week);
+
+        start.setMilliseconds(start.getMilliseconds() + days(day));
+
+        return start;
+      };
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task ID');
+        data.addColumn('string', 'Task Name');
+        data.addColumn('string', 'Resource');
+        data.addColumn('date', 'Start Date');
+        data.addColumn('date', 'End Date');
+        data.addColumn('number', 'Duration');
+        data.addColumn('number', 'Percent Complete');
+        data.addColumn('string', 'Dependencies');
+
+        data.addRows([
+          ['plan-project', 'Plan Project', 'plan', date(0, 0), date(0, 7), null, 100, null],
+          ['init-project', 'Setup Project', 'plan', date(0, 0), date(0, 7), null, 100, null],
+          ['research-distrib', 'Research Distributed Computing', 'research', date(1, 0), date(4, 7), null, 0, null],
+          ['research-crypto', 'Research Cryptographic Best-Practices', 'research', date(1, 0), date(4, 7), null, 0, null],
+          ['research-compiler', 'Research Compilation Techniques', 'research', date(1, 0), date(4, 7), null, 0, null],
+          ['design-api', 'Design C API for Library', 'design', date(2, 0), date(3, 7), null, 0, null],
+          ['design-proto', 'Design Network Protocol', 'design', date(2, 0), date(3, 7), null, 0, null],
+          ['design-lang', 'Design Compute Language', 'design', date(2, 0), date(3, 7), null, 0, null],
+          ['design-vm', 'Design Compute Language Interpreter', 'design', date(2, 0), date(3, 7), null, 0, null],
+          ['implement-lib', 'Implement Networking Library', 'impl', date(3, 0), date(8, 7), null, 0, null],
+          ['implement-worker', 'Implement Network Worker', 'impl', date(3, 0), date(8, 7), null, 0, null],
+          ['implement-compiler', 'Implement Compute Language Compiler', 'impl', date(3, 0), date(8, 7), null, 0, null],
+          ['implement-hello-world', 'Implement Hello-World Example', 'impl', date(9, 0), date(14, 7), null, 0, null],
+          ['implement-mandelbrot', 'Implement Mandelbrot Example', 'impl', date(9, 0), date(14, 7), null, 0, null],
+          ['implement-websieve', 'Implement Websieve Example', 'impl', date(9, 0), date(14, 7), null, 0, null],
+          ['report-intro', 'Write Report Intro Section', 'report', date(0, 0), date(2, 0), null, 0, null],
+          ['report-infra', 'Write Report Infrastructure Section', 'report', date(0, 0), date(2, 0), null, 0, null],
+          ['report-investigation', 'Write Report Investigation Section', 'report', date(3, 0), date(6, 0), null, 0, null],
+          ['report-lifecycle', 'Write Report Lifecycle Section', 'report', date(6, 0), date(9, 0), null, 0, null],
+          ['report-verification', 'Write Report Verification Section', 'report', date(9, 0), date(12, 0), null, 0, null],
+          ['report-validation', 'Write Report Validation Section', 'report', date(12, 0), date(15, 0), null, 0, null],
+          ['report-evaluation', 'Write Report Evaluation Section', 'report', date(15, 0), date(18, 0), null, 0, null],
+          ['report-final', 'Proofread and Finalise Report', 'report', date(18, 0), date(21, 0), null, 0, null],
+          ['report-presentation', 'Setup Presentation and Video', 'report', date(18, 0), date(21, 0), null, 0, null],
+        ]);
+
+        var options = { height: 1080 };
+        var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>

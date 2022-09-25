@@ -1,0 +1,8 @@
+TODO
+==============================================================================
+An incomplete list of tasks yet to be done.
+
+- [ ] Plan simple message API
+- [ ] Define simple message protocol
+- [ ] Research cryptography algorithms
+- [ ] Research distributed consistency algorithms

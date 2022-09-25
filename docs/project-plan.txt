@@ -1,0 +1,203 @@
+Project Plan
+==============================================================================
+The project is currently hosted on GitHub, at the following url:
+https://github.com/mblenczewski/distrib
+
+Work done so far
+------------------------------------------------------------------------------
+- Writing a simple networking library in C#
+- Writing a simple webserver in C
+- Written a commandline mandelbrot set calculator program in C
+- Written a threadpool implementation in C
+- Researching how to securely encrypt and authenticate data
+- Researching the ZeroMQ networking library
+- Researched tor, i2p, and other distributed network protocols
+- Researched distributed hashtables and distributed memory implementations
+- Planning of the network architecture and worker system block diagram
+- Setting up the project repository and build system
+
+What are you trying to achieve?
+------------------------------------------------------------------------------
+The goal of my third year project is to create a generic framework for
+distributed computing (in the vein of folding@home and other distributed
+scientific computing projects). This framework will allow a single computation
+(encoded into a "compute kernel") to be ran against a large, batched input
+space with multiple "workers" processing each input batch in parallel. The
+framework would also provide for securing all data in transit, so that
+sensitive computations could be made using the network. A set of example
+applications would also be written to show how the API and library can be used
+to achieve these goals.
+
+What are the objectives?
+------------------------------------------------------------------------------
+- Design and implement a library for network interaction that includes:
+  - serialisation, deserialisation, and encryption for messages
+  - a register machine bytecode interpreter for compute kernels
+  - distributed data structure implementations for network handling
+- Design and implement a compute kernel bytecode compiler
+- Design and implement a worker executable
+- Design and implement a set of examples demonstrating the use of the library
+
+What are the key goals?
+------------------------------------------------------------------------------
+- Research and analyse existing implementations of distributed computing
+  libraries and distributed algorithms and data structures
+- Research cryptographic signing and encryption best-practices
+- Design a simple API for accessing the library via C ffi
+- Design an efficient custom binary protocol for communication between
+  workers, with encryption for all data by default
+- Design a simple compute kernel language and a compiler for said language to
+  a bytecode representation
+- Design a simple register machine bytecode interpreter for the compute kernel
+  language
+- Write a portable, unit tested worker implementation in C
+- Write a portable, unit tested worker CLI implementation in C
+- Write a hello_world example application in C showing the use of the API,
+  offloading a simple calculation to the network and aggregating results
+- Write comprehensieve documentation for all code written
+- Write unit tests for all applicable code
+- Write a report on the project
+- Record a video on the project
+
+What are the secondary goals?
+------------------------------------------------------------------------------
+- Write a mandelbrot set calculator example, to calculate a bitmap of
+  arbitrary resolution of a fragment of the mandelbrot fractal
+- Write a prime sieve web application, showing how to tie the framework into a
+  larger project (potentially using some form of FFI / native bindings)
+- A set of benchmarks for all written code
+
+What are the deliverables?
+------------------------------------------------------------------------------
+- All code for the project in a single git repository, including
+  documentation, benchmarks, and tests
+- Executables and binaries for the library and examples
+- A compiled LaTeX report, in a pdf format
+- A video showcasing and summarising the project, including a showcase of the
+  project in action
+
+What are the milestones?
+------------------------------------------------------------------------------
+Planning milestones:
+- Finish project plan
+- Finish project repository and tooling setup
+
+Research and design milestones:
+- Finish research of cryptography and security of data in transit
+- Finish research of distributed memory, consistency, and network protocols
+- Finish design of network architecture
+- Finish design of network protocol
+- Finish design of API
+- Finish design of compute kernel language
+
+Implementation milestones:
+- Implement unit tests of compute kernel compiler
+- Implement unit tests of compute kernel interpreter
+- Implement unit tests of API
+- Implement unit tests of worker implementation
+- Implement unit tests of worker CLI implementation
+- Implement compute kernel compiler
+- Implement compute kernel interpreter
+- Implement API
+- Implement hello_world example
+- Implement worker
+- Implement worker CLI
+
+Report and evaluation milestones:
+- Finish problem elucidation and objectives report section
+- Finish investigation report section
+- Finish life cycle report section
+- Finish verification and validation report section
+- Finish tooling and project infrastructure report section
+- Finish critical appraisal and evaluation report section
+- Proofread report
+- Finish report
+- Finish video presentation
+
+Weekly Plan
+------------------------------------------------------------------------------
+Sem 1, Week 01:
+- Finish project plan
+- Finish project repository and tooling setup
+- Design network architecture
+
+Sem 1, Week 02:
+- Finish problem elucidation and objectives report section
+- Finish life cycle report section
+- Finish tooling and project infrastructure report section
+- Finish designing network architecture
+- Research cryptographic security guarantees and best practices
+- Research distributed memory, consistency, and network protocols
+
+Sem 1, Week 03:
+- Finish research of cryptographic security guarantees and best practices
+- Research distributed memory, consistency, and network protocols
+- Design network protocol
+- Design API
+
+Sem 1, Week 04:
+- Finish research of distributed memory, consistency, and network protocols
+- Finish designing network protocol
+- Design API
+
+Sem 1, Week 05:
+- Finish investigation report section
+- Finish designing API
+- Implement unit tests of API
+
+Sem 1, Week 06:
+- Finish implementing unit tests of API
+- Implement API
+- Implement hello_world example
+- Implement unit tests of worker implementation
+- Implement unit tests of worker CLI implementation
+
+Sem 1, Week 07:
+- Implement API
+- Implement hello_world example
+- Implement unit tests of worker implementation
+- Implement unit tests of worker CLI implementation
+
+Sem 1, Week 08:
+- Finish implementing API
+- Finish implementing hello_world example
+- Finish implementing unit tests of worker implementation
+- Finish implementing unit tests of worker CLI implementation
+- Implement worker
+- Implement worker CLI
+
+Sem 1, Week 09:
+- Finish verification and validation report section
+- Implement worker
+- Implement worker CLI
+
+Sem 1, Week 10:
+- Implement worker
+- Implement worker CLI
+
+Sem 1, Week 11:
+- Finish implementing worker
+- Finish implementing worker CLI
+
+Sem 1, Week 12:
+- [Optional] Implement mandelbrot example
+- [Optional] Implement websieve example
+- [Optional] Create benchmarking code
+
+Sem 2, Week 01:
+- [Optional] Implement mandelbrot example
+- [Optional] Implement websieve example
+- [Optional] Create benchmarking code
+
+Sem 2, Week 02:
+- Finish critical appraisal and evaluation report section
+
+Sem 2, Week 03:
+- Finish report
+
+Sem 2, Week 04:
+- Proofread report
+- Finish video presentation
+
+Sem 2, Week 05:
+- Proofread report

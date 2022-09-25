@@ -1,0 +1,7 @@
+bin/
+lib/
+obj/
+
+distrib.tar*
+
+**/.*.swp
